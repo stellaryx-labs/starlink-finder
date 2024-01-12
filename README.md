@@ -1,7 +1,12 @@
+<img alt="Banner" width="700" src="https://github.com/stellaryx-labs/starlink-finder/blob/main/assets/images/preview_1.png">
+
 # Starlink Finder
+
 A simple space OSINT tool to retrieve Starlink satellite data. Created as a demonstrative project for the "Build your own Space OSINT Tool" workshop.
 
 ## Preview
+
+<img alt="Preview" width="700" src="https://github.com/stellaryx-labs/starlink-finder/blob/main/assets/images/preview_2.png">
 
 ## Usage
 To run Starlink Finder on your machine, follow the steps below:
