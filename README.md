@@ -1,5 +1,5 @@
 # Starlink Finder
-A simple space OSINT to retrieve information about any Starlink satellite. Created as a demonstrative project for the "Build your own Space OSINT Tool" workshop
+A simple space OSINT tool to retrieve Starlink satellite data. Created as a demonstrative project for the "Build your own Space OSINT Tool" workshop.
 
 ## Preview
 
