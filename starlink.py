@@ -48,7 +48,7 @@ def get_row_content(key, value):
 
 
 def print_menu():
-    f = open('./assets/graphic.txt', 'r', encoding="utf8")
+    f = open('./assets/graphics.txt', 'r', encoding="utf8")
     content = f.read()
     console.print("[bold blue]" + content + "[/blue bold]")
     f = open('./assets/details.txt', 'r', encoding="utf8")
@@ -58,6 +58,7 @@ def print_menu():
 
 
 def main():
+    print_menu()
     starlink_name = console.input("Enter Starlink Satellite Name:")
     print("Retrieving Information for " + starlink_name)
     api_url = "https://api.spacexdata.com/v4/starlink/"
