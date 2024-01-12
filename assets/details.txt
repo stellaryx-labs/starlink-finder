@@ -5,8 +5,8 @@
  |____/ \__\__,_|_|  |_|_|_| |_|_|\_\ |_|   |___|_| \_|____/|_____|_| \_\
                                                                          
                                                                                                                
-        Find information about any aircraft given an ICAO ID
-             GitHub: https://github.com/ANG13T/skytrack
+         Find orbital information about any Starlink satellite
+         GitHub: github.com/stellaryx-labs/starlink-osint-demo
 
              Developed by Angelina Tsuboi (G4LXY)
                       angelinatsuboi.com
