@@ -9,5 +9,4 @@ Process Flow:
 3. Display Satellite Info
 
 Error Handling from API
-Sending Content with Body
 Make it more cutomizable
