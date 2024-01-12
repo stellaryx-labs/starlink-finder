@@ -3,16 +3,20 @@ from rich.console import Console
 
 console = Console()
 
+
 def get_api_data(api_url):
     response = requests.get(api_url)
     if response.status_code == 200:
         return response.json()
     else:
-        print(f"Error: Unable to fetch data. Status code: {response.status_code}")
+        print(
+            f"Error: Unable to fetch data. Status code: {response.status_code}")
         return None
+
 
 def print_data(data):
     return
+
 
 def print_menu():
     f = open('./assets/graphic.txt', 'r', encoding="utf8")
@@ -27,14 +31,18 @@ def print_menu():
 def main():
     starlink_id = console.input("Enter Starlink ID:")
     print(starlink_id)
-    api_url = "https://api.spacexdata.com/v4/starlink/" + starlink_id
-    
+    api_url = "https://api.spacexdata.com/v4/starlink/"
+
     data = get_api_data(api_url)
 
     if data:
         for entry in data:
-            print(entry)
+            if entry["spaceTrack"]["OBJECT_NAME"] == starlink_id:
+                print(entry)
+                return
+
+    print("entry not found")
+
 
 if __name__ == "__main__":
     main()
-
