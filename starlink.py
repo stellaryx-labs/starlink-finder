@@ -1,5 +1,9 @@
 import requests
+from rich.align import Align
 from rich.console import Console
+from rich.live import Live
+from rich.table import Table
+from modules.option import *
 
 console = Console()
 
@@ -14,11 +18,33 @@ def get_api_data(api_url):
         return None
 
 
-def print_data(data):
+def print_data(starlink_name, data):
+    console = Console()
+    table = Table(show_footer=False)
+    table_centered = Align.left(table)
+
+    contents = []
+
     data = data["spaceTrack"]
     for prop in data:
-        print(prop, data[prop])
-    return
+        contents.append(get_row_content(prop, data[prop]))
+
+    with Live(table_centered, console=console,
+              screen=False):
+        table.add_column(
+            f"Information for {starlink_name} 🛰️", no_wrap=True)
+
+        for content in contents:
+            if len(content) > 0:
+                table.add_row(content)
+
+    table.width = None
+
+
+def get_row_content(key, value):
+    key = key.upper().replace("_", " ")
+
+    return f"[b white]{key}[/]: [blue]{value} [/]"
 
 
 def print_menu():
@@ -41,10 +67,24 @@ def main():
     if data:
         for entry in data:
             if entry["spaceTrack"]["OBJECT_NAME"] == starlink_name:
-                print_data(entry)
+                print_data(starlink_name, entry)
                 return
 
     print("entry not found")
+
+
+def option():
+    options = [
+        "Run Again",
+        "Exit Tool"
+    ]
+
+    option = generate_option(options)
+
+    if option == 1:
+        main()
+    else:
+        return
 
 
 if __name__ == "__main__":
