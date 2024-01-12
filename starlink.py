@@ -15,6 +15,9 @@ def get_api_data(api_url):
 
 
 def print_data(data):
+    data = data["spaceTrack"]
+    for prop in data:
+        print(prop, data[prop])
     return
 
 
@@ -29,16 +32,16 @@ def print_menu():
 
 
 def main():
-    starlink_id = console.input("Enter Starlink ID:")
-    print(starlink_id)
+    starlink_name = console.input("Enter Starlink Satellite Name:")
+    print("Retrieving Information for " + starlink_name)
     api_url = "https://api.spacexdata.com/v4/starlink/"
 
     data = get_api_data(api_url)
 
     if data:
         for entry in data:
-            if entry["spaceTrack"]["OBJECT_NAME"] == starlink_id:
-                print(entry)
+            if entry["spaceTrack"]["OBJECT_NAME"] == starlink_name:
+                print_data(entry)
                 return
 
     print("entry not found")
