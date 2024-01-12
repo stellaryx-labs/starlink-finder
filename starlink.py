@@ -63,14 +63,18 @@ def main():
     api_url = "https://api.spacexdata.com/v4/starlink/"
 
     data = get_api_data(api_url)
+    found = False
 
     if data:
         for entry in data:
             if entry["spaceTrack"]["OBJECT_NAME"] == starlink_name:
                 print_data(starlink_name, entry)
-                return
+                found = True
 
-    print("entry not found")
+    if found == False:
+        print("entry not found")
+
+    option()
 
 
 def option():
