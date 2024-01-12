@@ -13,7 +13,7 @@ API_URL = "https://api.spacexdata.com/v4/starlink/"
 def main():
     print_menu()
     starlink_name = console.input(
-        "[bold blue]Enter Starlink Satellite Name:[/ bold blue]")
+        "[bold blue]Enter Starlink Satellite Name: [/ bold blue]")
     print("\n")
 
     data = get_api_data(API_URL)
