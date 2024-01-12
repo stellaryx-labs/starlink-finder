@@ -5,8 +5,8 @@ console = Console()
 
 def generate_option(options):
     for i, item in enumerate(options):
-        console.print("[cyan bold] [" + str(i + 1) + "] " +
-                      item + "[/cyan bold] \n")
+        console.print("[blue bold] [" + str(i + 1) + "] " +
+                      item + "[/blue bold] \n")
 
     res = console.input("[bold][blue] ENTER INPUT > [/blue][/bold]")
 

@@ -12,7 +12,8 @@ API_URL = "https://api.spacexdata.com/v4/starlink/"
 
 def main():
     print_menu()
-    starlink_name = console.input("Enter Starlink Satellite Name:")
+    starlink_name = console.input(
+        "[bold blue]Enter Starlink Satellite Name:[/ bold blue]")
     print("\n")
 
     data = get_api_data(API_URL)
@@ -22,7 +23,7 @@ def main():
     if data:
         for entry in data:
             if entry["spaceTrack"]["OBJECT_NAME"] == starlink_name:
-                print_data(table_title, starlink_name, entry)
+                print_data(table_title, entry)
                 found = True
 
     if found == False:

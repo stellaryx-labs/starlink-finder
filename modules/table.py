@@ -4,7 +4,7 @@ from rich.table import Table
 from rich.align import Align
 
 
-def print_data(table_title, starlink_name, data):
+def print_data(table_title, data):
     console = Console()
     table = Table(show_footer=False)
     table_centered = Align.left(table)
@@ -30,4 +30,4 @@ def print_data(table_title, starlink_name, data):
 def get_row_content(key, value):
     key = key.upper().replace("_", " ")
 
-    return f"[b white]{key}[/]: [blue]{value} [/]"
+    return f"[b white]{key}[/]: [cyan]{value} [/]"
